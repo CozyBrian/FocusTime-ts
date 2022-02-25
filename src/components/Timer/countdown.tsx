@@ -24,7 +24,7 @@ const formatTime = (time: number) => (time < 10 ? `0${time}` : time);
 export const Countdown: React.FC<Props> = ({minutes = 0.1, isPaused = false, onProgress, onEnd}: Props) => {
   const interval = useRef<any>(null);
 
-  const [millis, setMillis] = useState<number>(0)
+  const [millis, setMillis] = useState<number|any>(null);
   
   useEffect(() => {
     setMillis(minutesToMillis(minutes));
