@@ -1,19 +1,20 @@
+import React, {useState} from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View } from 'react-native';
-import { Focus } from './src/components/focus';
+import { SafeArea } from './src/utils/SafeArea';
+import { Focus } from './src/components/Focus/focus';
+import { FocusHistory } from './src/components/Focus/focusHistory';
+
 
 export default function App() {
+  const [focusSubject, setFocusSubject] = useState<string>("");
+
   return (
-    <View style={styles.container}>
+    <>
       <StatusBar style="auto" />
-      <Focus/>
-    </View>
+      <SafeArea>
+        <Focus addSubject={setFocusSubject}/>
+        <FocusHistory />
+      </SafeArea>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#208fda',
-  },
-});

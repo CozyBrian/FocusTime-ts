@@ -1,9 +1,7 @@
 import React from 'react';
-import styled from 'styled-components/native';
+import styled from 'styled-components';
 
 const Container = styled.View`
-  padding-top: 50px;
-  flex: 1;
 `
 const TextView = styled.View`
   margin: 8px;
@@ -14,8 +12,12 @@ const Text = styled.Text`
   font-weight: bold;
   color: #fff;
 `
+
+type Props = {
+  addSubject: React.Dispatch<React.SetStateAction<string>>;
+}
  
-export const Focus: React.FC = () => {
+export const Focus: React.FC<Props> = ({addSubject}: Props) => {
   return (
     <Container>
       <TextView>
