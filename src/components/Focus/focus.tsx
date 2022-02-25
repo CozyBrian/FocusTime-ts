@@ -48,7 +48,11 @@ export const Focus: React.FC<Props> = ({addSubject}: Props) => {
         style={{flex: 1, padding: 10, fontSize: 18}}
       />
       </InputTextBox>
-      <Button title="Focus" bc={colors.Secondary} style={{marginTop: 14, alignSelf: "flex-end"}}/>
+      <Button 
+        title="Focus"
+        bc={colors.Secondary}
+        onPress={() => addSubject(subject)}
+        style={{marginTop: 14, alignSelf: "flex-end"}}/>
     </Container>
   )
 }

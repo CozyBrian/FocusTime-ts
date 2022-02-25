@@ -2,6 +2,9 @@ import React from 'react';
 import { colors } from '../../constants';
 import { SettingsIcon } from '../../utils';
 import styled from 'styled-components/native';
+import { FocusType } from '../modal';
+import { FocusItem } from './focus-item';
+import { FlatList } from 'react-native';
 
 const Container = styled.View`
   flex: 1;
@@ -27,13 +30,31 @@ const Header = styled.View`
   padding: 8px;
 `;
 
-export const FocusHistory: React.FC = () => {
+const ItemList = styled.View`
+  flex: 1;
+`;
+
+type Props = {
+  focusHistory: FocusType[]
+}
+
+export const FocusHistory: React.FC<Props> = ({focusHistory}: Props) => {
   return (
     <Container>
       <Header>
         <HeaderText>Focus</HeaderText>
         <SettingsIcon onPress={null}/>
       </Header>
+      <ItemList>
+        <FlatList
+          data={focusHistory}
+          renderItem={(item) => {
+            return (
+              <FocusItem subject={item.subject}/>
+            )
+          }}
+        />
+      </ItemList>
     </Container>
   )
 }
