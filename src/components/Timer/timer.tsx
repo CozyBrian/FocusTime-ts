@@ -38,7 +38,7 @@ const ClearView = styled.View`
   padding-left: 20px;
 `;
 
-const DEFAULT_TIME = 0.1;
+const DEFAULT_TIME = 1;
 
 type Props = {
   focusSubject: string | null,
