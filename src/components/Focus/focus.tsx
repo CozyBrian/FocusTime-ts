@@ -5,7 +5,7 @@ import { Button } from '../../utils/Button';
 import { colors } from '../../constants';
 
 const Container = styled.View`
-padding: 14px;
+padding: 12px;
 `
 const TextView = styled.View`
   margin: 8px;
@@ -29,7 +29,7 @@ const InputTextBox = styled.View`
 `;
 
 type Props = {
-  addSubject: React.Dispatch<React.SetStateAction<string>>;
+  addSubject: React.Dispatch<React.SetStateAction<string|null>>;
 }
  
 export const Focus: React.FC<Props> = ({addSubject}: Props) => {
