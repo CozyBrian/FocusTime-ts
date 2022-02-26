@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { SafeArea } from './src/utils/SafeArea';
 import { Focus } from './src/components/Focus/focus';
 import { FocusType } from './src/components/modal';
@@ -11,17 +11,34 @@ const STATUSES = {
 };
 
 export default function App() {
-  const [focusSubject, setFocusSubject] = useState<string>("");
+  const [focusSubject, setFocusSubject] = useState<string|null>(null);
   const [focusHistory, setFocusHistory] = useState<FocusType[]>([]);
 
   const addFocusSubjectHistoryWithState = (subject: string, status: number) => {
     setFocusHistory([...focusHistory, { key: String(focusHistory.length + 1), subject, status }]);
   };
 
+  const clear = (fs: string) => {
+    addFocusSubjectHistoryWithState(fs, STATUSES.CANCELLED);
+    setFocusSubject(null);
+    console.log("cleard");
+  }
+  const end = (fs: string) => {
+    addFocusSubjectHistoryWithState(fs, STATUSES.COMPLETE);
+    setFocusSubject(null);
+    console.log("end");
+  }
+
+
+
   return (
     <SafeArea>
-      {true ? (
-        <Timer />
+      {focusSubject ? (
+        <Timer 
+          focusSubject={focusSubject} 
+          clearSubject={() => clear(focusSubject)}
+          onTimerEnd={() => end(focusSubject)}
+        />
       ) : (
         <>
           <Focus addSubject={setFocusSubject}/>
