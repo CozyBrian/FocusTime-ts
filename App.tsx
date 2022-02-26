@@ -21,12 +21,10 @@ export default function App() {
   const clear = (fs: string) => {
     addFocusSubjectHistoryWithState(fs, STATUSES.CANCELLED);
     setFocusSubject(null);
-    console.log("cleard");
   }
   const end = (fs: string) => {
     addFocusSubjectHistoryWithState(fs, STATUSES.COMPLETE);
     setFocusSubject(null);
-    console.log("end");
   }
 
 

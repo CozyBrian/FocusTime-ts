@@ -22,7 +22,7 @@ const ButtonWrapper = styled.View`
   align-items: center;
 `;
 const SubjectView = styled.View`
-  padding-top: 20px;
+  
 `;
 const FText = styled.Text`
   color: ${colors.White};
