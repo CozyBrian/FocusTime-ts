@@ -11,7 +11,7 @@ const Container = styled.View`
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
   background-color: ${colors.White};
-  padding: 12px;
+  padding: 8px;
   shadow-color: #000;
   shadow-offset:  0px 1px;
   shadow-opacity: 0.22;
@@ -27,7 +27,7 @@ const Header = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 8px;
+  padding: 10px;
 `;
 
 const ItemList = styled.View`
@@ -48,9 +48,9 @@ export const FocusHistory: React.FC<Props> = ({focusHistory}: Props) => {
       <ItemList>
         <FlatList
           data={focusHistory}
-          renderItem={(item) => {
+          renderItem={({item}) => {
             return (
-              <FocusItem subject={item.subject}/>
+              <FocusItem subject={item.subject} status={item.status}/>
             )
           }}
         />
