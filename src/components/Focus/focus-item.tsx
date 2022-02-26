@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const Container = styled.View`
   height: 50px;
+  margin: 2px 4px 10px 4px;
   background-color: ${colors.White};
   border-radius: 15px;
   align-items: center;
@@ -15,7 +16,7 @@ const Container = styled.View`
   shadow-opacity: 0.37;
   shadow-radius: 3.2px;
 
-  elevation: 8;
+  elevation: 5;
 `;
 
 const CardText = styled.Text`
@@ -24,21 +25,22 @@ const CardText = styled.Text`
 `;
 type Props = {
   subject: string,
+  status: number,
 }
 
-export const FocusItem: React.FC<Props> = ({subject}: Props) => {
+export const FocusItem: React.FC<Props> = ({subject, status}: Props) => {
 
   const Status = styled.View`
     height: 50px;
     width: 5%;
     border-bottom-right-radius: 15px;
     border-top-right-radius: 15px;
-    background-color: #aa0000;
+    background-color: ${status > 1 ? "#aa0000" : "#00aa00"} ;
   `;
 
   return (
     <Container>
-      <CardText>Hello</CardText>
+      <CardText>{subject}</CardText>
       <Status/>
     </Container>
   )
