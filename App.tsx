@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import { SafeArea } from './src/utils/SafeArea';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Focus } from './src/components/Focus/focus';
 import { FocusType } from './src/components/modal';
