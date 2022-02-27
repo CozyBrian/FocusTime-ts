@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import { colors } from "../../constants";
 import { Vibration, Platform } from "react-native";
-import styled from "styled-components";
+import styled from "styled-components/native";
 import {ProgressBar} from "react-native-paper";
 import { Timing } from "./timing";
 import { Button } from "../../utils/Button";

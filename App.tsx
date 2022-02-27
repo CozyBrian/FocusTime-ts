@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { SafeArea } from './src/utils/SafeArea';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { Focus } from './src/components/Focus/focus';
 import { FocusType } from './src/components/modal';
 import { Timer } from './src/components/Timer/timer';
 import { FocusHistory } from './src/components/Focus/focusHistory';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { colors } from './src/constants';
 
 const STATUSES = {
   COMPLETE: 1,
@@ -57,7 +59,7 @@ export default function App() {
 
 
   return (
-    <SafeArea>
+    <SafeAreaView style={{flex: 1, backgroundColor: colors.Primary}} edges={['right', 'top', 'left']}>
       {focusSubject ? (
         <Timer 
           focusSubject={focusSubject} 
@@ -70,6 +72,6 @@ export default function App() {
           <FocusHistory focusHistory={focusHistory}/>
         </>
       )}
-    </SafeArea>
+    </SafeAreaView>
   );
 }

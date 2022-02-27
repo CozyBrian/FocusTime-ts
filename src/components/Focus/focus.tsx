@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 import { TextInput } from 'react-native';
 import { Button } from '../../utils/Button';
 import { colors } from '../../constants';

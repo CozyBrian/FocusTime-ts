@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
+import {SafeAreaView} from "react-native"
 import { colors } from "../constants";
 import { StatusBar } from "react-native";
 

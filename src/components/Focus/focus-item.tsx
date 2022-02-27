@@ -1,6 +1,6 @@
 import React from "react";
 import { colors } from "../../constants";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 const Container = styled.View`
   height: 50px;

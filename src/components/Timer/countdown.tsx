@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import { colors } from "../../constants";
-import styled from "styled-components";
+import styled from "styled-components/native";
 
 const Text = styled.Text`
   font-size: 100px;
